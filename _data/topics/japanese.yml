@@ -1,0 +1,25 @@
+resources:
+  - title: Tae Kim's Guide to Learning Japanese
+    url: http://www.guidetojapanese.org/learn/
+    description: Grammar guide for beginners to intermediate learners.
+    tags: [grammar, guide]
+    type: article
+    level: beginner
+    added: 2023-10-05
+    rating: 4
+  - title: NHK Easy News
+    url: https://www3.nhk.or.jp/news/easy/
+    description: Simplified Japanese news articles with furigana.
+    tags: [reading, news]
+    type: article
+    level: beginner
+    added: 2024-06-14
+    rating: 5
+  - title: Anki Spaced Repetition System
+    url: https://apps.ankiweb.net/
+    description: Flashcard system ideal for vocabulary retention.
+    tags: [anki, flashcards, vocabulary]
+    type: tool
+    level: all
+    added: 2024-09-09
+    rating: 5

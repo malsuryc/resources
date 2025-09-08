@@ -1,0 +1,38 @@
+title: "Learning Resources"
+description: "Curated topic-based resource library (Machine Learning, C++, Japanese, Mindset, etc.)"
+theme: minima
+markdown: kramdown
+permalink: /:title/
+collections:
+  topics:
+    output: true
+    permalink: /topics/:name/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: "topics"
+    values:
+      layout: topic
+plugins: [] # Avoid unsupported plugins to stay GitHub Pages compatible
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+baseurl: "/resources"
+url: "https://malsuryc.github.io"
+
+# Custom site data for navigation
+nav_topics:
+  - key: machine-learning
+    title: Machine Learning
+  - key: cpp
+    title: C++
+  - key: japanese
+    title: Japanese
+  - key: mindset
+    title: Mindset

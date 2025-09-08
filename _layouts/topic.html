@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="topic-header">
+  <h2>{{ page.title }}</h2>
+  <p class="topic-meta">Interactive list of curated resources for {{ page.title }}. Use search, tag filters, and sorting.</p>
+</section>
+
+<div class="filters" data-topic="{{ page.topic_key }}">
+  <input type="text" id="search" placeholder="Search (title, description, tags)" aria-label="Search resources" />
+  <div class="tag-filters" id="tagFilters"></div>
+  <label class="sort-label">Sort:
+    <select id="sortSelect">
+      <option value="title">Title (A-Z)</option>
+      <option value="-title">Title (Z-A)</option>
+      <option value="added">Date Added (Newest)</option>
+      <option value="-added">Date Added (Oldest)</option>
+      <option value="rating">Rating (High)</option>
+      <option value="-rating">Rating (Low)</option>
+    </select>
+  </label>
+  <span id="resultCount"></span>
+</div>
+
+<ul id="resourceList" class="resource-list" aria-live="polite"></ul>
+
+<noscript>
+  <p><strong>Note:</strong> Enable JavaScript to use interactive filtering. Basic list:</p>
+  <ul>
+    {% assign data_set = site.data.topics[page.topic_key].resources %}
+    {% for r in data_set %}
+      <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.title }}</a> - {{ r.description }}</li>
+    {% endfor %}
+  </ul>
+</noscript>
+
+<script id="topic-data" type="application/json">
+{
+  "topic_key": {{ page.topic_key | jsonify }},
+  "resources": {{ site.data.topics[page.topic_key].resources | jsonify }}
+}
+</script>

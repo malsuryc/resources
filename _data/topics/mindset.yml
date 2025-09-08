@@ -1,0 +1,25 @@
+resources:
+  - title: Atomic Habits by James Clear
+    url: https://jamesclear.com/atomic-habits
+    description: Framework for building and sustaining good habits.
+    tags: [habits, behavior]
+    type: book
+    level: all
+    added: 2024-02-11
+    rating: 5
+  - title: Carol Dweck on Growth Mindset (TED Talk)
+    url: https://www.ted.com/talks/carol_dweck_the_power_of_believing_you_can_improve
+    description: Overview of growth vs fixed mindset.
+    tags: [growth-mindset, video]
+    type: video
+    level: all
+    added: 2023-11-30
+    rating: 4
+  - title: The War of Art by Steven Pressfield
+    url: https://www.stevenpressfield.com/the-war-of-art/
+    description: Overcoming creative resistance.
+    tags: [creativity, resistance]
+    type: book
+    level: all
+    added: 2024-08-01
+    rating: 4

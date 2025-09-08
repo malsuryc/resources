@@ -1,0 +1,25 @@
+resources:
+  - title: C++ Reference (cppreference)
+    url: https://en.cppreference.com/
+    description: Comprehensive C++ language and standard library reference.
+    tags: [reference, standard-library]
+    type: documentation
+    level: all
+    added: 2024-04-12
+    rating: 5
+  - title: C++ Core Guidelines
+    url: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+    description: Best practices for modern C++.
+    tags: [guidelines, best-practices]
+    type: documentation
+    level: all
+    added: 2024-07-21
+    rating: 5
+  - title: Compiler Explorer
+    url: https://godbolt.org/
+    description: Interactive tool to see compiled assembly for C++ code.
+    tags: [tool, optimization]
+    type: tool
+    level: intermediate
+    added: 2025-03-03
+    rating: 4
