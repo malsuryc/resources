@@ -19,33 +19,56 @@
   const searchInput = document.getElementById('search');
   const sortSelect = document.getElementById('sortSelect');
   const tagFiltersEl = document.getElementById('tagFilters');
+  const typeFiltersEl = document.getElementById('typeFilters');
   const resultCountEl = document.getElementById('resultCount');
   const data = window.TOPIC_RESOURCES.slice();
 
-  // Extract unique tags
+  // Normalize types: allow legacy single 'type' or new 'types' array
+  data.forEach(r => {
+    if (!r.types) {
+      if (r.type && Array.isArray(r.type)) {
+        r.types = r.type; // in case someone already provided an array under type
+      } else if (r.type) {
+        r.types = [r.type];
+      } else {
+        r.types = [];
+      }
+    }
+  });
+
+  // Extract unique tags & types
   const tagSet = new Set();
-  data.forEach(r => (r.tags || []).forEach(t => tagSet.add(t)));
+  const typeSet = new Set();
+  data.forEach(r => {
+    (r.tags || []).forEach(t => tagSet.add(t));
+    (r.types || []).forEach(tp => typeSet.add(tp));
+  });
   const tags = Array.from(tagSet).sort();
+  const types = Array.from(typeSet).sort();
 
   const activeTags = new Set();
+  const activeTypes = new Set();
 
-  function renderTagChips() {
+  function buildChip(label, collection, activeSet) {
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.textContent = label;
+    chip.tabIndex = 0;
+    const toggle = () => {
+      if (activeSet.has(label)) activeSet.delete(label); else activeSet.add(label);
+      chip.classList.toggle('active');
+      apply();
+    };
+    chip.addEventListener('click', toggle);
+    chip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }});
+    collection.appendChild(chip);
+  }
+
+  function renderFilterChips() {
     tagFiltersEl.innerHTML = '';
-    if (!tags.length) return;
-    tags.forEach(tag => {
-      const chip = document.createElement('span');
-      chip.className = 'tag-chip';
-      chip.textContent = tag;
-      chip.tabIndex = 0;
-      const toggle = () => {
-        if (activeTags.has(tag)) activeTags.delete(tag); else activeTags.add(tag);
-        chip.classList.toggle('active');
-        apply();
-      };
-      chip.addEventListener('click', toggle);
-      chip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }});
-      tagFiltersEl.appendChild(chip);
-    });
+    typeFiltersEl.innerHTML = '';
+    tags.forEach(tag => buildChip(tag, tagFiltersEl, activeTags));
+    types.forEach(tp => buildChip(tp, typeFiltersEl, activeTypes));
   }
 
   function normalize(str) { return (str || '').toLowerCase(); }
@@ -53,13 +76,18 @@
   function apply() {
     const q = normalize(searchInput.value.trim());
     const tagFilter = activeTags.size ? Array.from(activeTags) : null;
+    const typeFilter = activeTypes.size ? Array.from(activeTypes) : null;
     let filtered = data.filter(r => {
       // Tag AND logic
       if (tagFilter) {
         if (!r.tags || tagFilter.some(t => !r.tags.includes(t))) return false;
       }
+      // Type AND logic
+      if (typeFilter) {
+        if (!r.types || typeFilter.some(t => !r.types.includes(t))) return false;
+      }
       if (!q) return true;
-      const blob = [r.title, r.description, (r.tags || []).join(' ')].map(normalize).join(' ');
+      const blob = [r.title, r.description, (r.tags || []).join(' '), (r.types || []).join(' ')].map(normalize).join(' ');
       return blob.includes(q);
     });
 
@@ -85,7 +113,7 @@
       li.className = 'resource-item';
       const tagsHtml = (r.tags||[]).map(t => `<span class="tag-badge" title="Tag: ${t}">${t}</span>`).join('');
       const metaBits = [];
-      if (r.type) metaBits.push(r.type);
+  if (r.types && r.types.length) metaBits.push(r.types.join('/'));
       if (r.level) metaBits.push(r.level);
       if (r.language) metaBits.push(r.language);
       if (r.rating) metaBits.push(`⭐${r.rating}`);
@@ -105,6 +133,6 @@
   ['input','change'].forEach(ev => searchInput.addEventListener(ev, apply));
   sortSelect.addEventListener('change', apply);
 
-  renderTagChips();
+  renderFilterChips();
   apply();
 })();

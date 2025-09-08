@@ -20,13 +20,22 @@ footer.site-footer { text-align:center; font-size:0.85rem; color:#64748b; paddin
 .topic-card p { margin:0; color:#475569; font-size:0.85rem; }
 
 /* Filters */
-.filters { display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center; background:#ffffff; padding:0.85rem 1rem; border:1px solid #e2e8f0; border-radius:0.75rem; box-shadow:0 1px 2px rgba(0,0,0,0.04); margin-bottom:1.25rem; }
-.filters input[type=text]{ flex:1 1 230px; padding:0.55rem .7rem; border:1px solid #cbd5e1; border-radius:6px; font-size:0.9rem; }
+.filters { display:flex; flex-direction:column; gap:0.6rem; background:#ffffff; padding:0.85rem 1rem; border:1px solid #e2e8f0; border-radius:0.75rem; box-shadow:0 1px 2px rgba(0,0,0,0.04); margin-bottom:1.25rem; }
+.filter-row { display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center; }
+.filters input[type=text]{ flex:1 1 260px; padding:0.55rem .7rem; border:1px solid #cbd5e1; border-radius:6px; font-size:0.9rem; }
 .filters select { padding:0.5rem .6rem; border:1px solid #cbd5e1; border-radius:6px; font-size:0.85rem; }
-.filters #resultCount { font-size:0.75rem; font-weight:500; color:#475569; margin-left:auto; }
-.tag-filters { display:flex; flex-wrap:wrap; gap:0.35rem; }
-.tag-chip { background:#e2e8f0; color:#334155; padding:0.3rem 0.55rem; border-radius:999px; font-size:0.65rem; cursor:pointer; user-select:none; line-height:1; font-weight:500; letter-spacing:.4px; }
+.filters #resultCount, .result-count { font-size:0.75rem; font-weight:500; color:#475569; margin-left:auto; }
+.filter-group { display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; }
+.filter-label { font-size:0.6rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#475569; }
+.tag-filters, .type-filters { display:flex; flex-wrap:wrap; gap:0.35rem; }
+.tag-chip { background:#e2e8f0; color:#334155; padding:0.3rem 0.55rem; border-radius:999px; font-size:0.65rem; cursor:pointer; user-select:none; line-height:1; font-weight:500; letter-spacing:.4px; transition: background .15s, color .15s; }
 .tag-chip.active { background:#0d6efd; color:#fff; }
+@media (max-width: 640px) {
+  .primary-row { flex-direction:column; align-items:stretch; }
+  .filter-group { width:100%; }
+  .secondary-row { flex-direction:column; align-items:flex-start; }
+  .filters #resultCount { margin-left:0; }
+}
 
 /* Resource list */
 .resource-list { list-style:none; margin:0; padding:0; display:grid; gap:0.75rem; }

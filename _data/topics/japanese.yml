@@ -3,7 +3,7 @@ resources:
     url: http://www.guidetojapanese.org/learn/
     description: Grammar guide for beginners to intermediate learners.
     tags: [grammar, guide]
-    type: article
+    types: [article, guide]
     level: beginner
     added: 2023-10-05
     rating: 4
@@ -11,7 +11,7 @@ resources:
     url: https://www3.nhk.or.jp/news/easy/
     description: Simplified Japanese news articles with furigana.
     tags: [reading, news]
-    type: article
+    types: [article]
     level: beginner
     added: 2024-06-14
     rating: 5
@@ -19,7 +19,7 @@ resources:
     url: https://apps.ankiweb.net/
     description: Flashcard system ideal for vocabulary retention.
     tags: [anki, flashcards, vocabulary]
-    type: tool
+    types: [tool, app]
     level: all
     added: 2024-09-09
     rating: 5

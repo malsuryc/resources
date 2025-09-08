@@ -7,19 +7,30 @@ layout: default
 </section>
 
 <div class="filters" data-topic="{{ page.topic_key }}">
-  <input type="text" id="search" placeholder="Search (title, description, tags)" aria-label="Search resources" />
-  <div class="tag-filters" id="tagFilters"></div>
-  <label class="sort-label">Sort:
-    <select id="sortSelect">
-      <option value="title">Title (A-Z)</option>
-      <option value="-title">Title (Z-A)</option>
-      <option value="added">Date Added (Newest)</option>
-      <option value="-added">Date Added (Oldest)</option>
-      <option value="rating">Rating (High)</option>
-      <option value="-rating">Rating (Low)</option>
-    </select>
-  </label>
-  <span id="resultCount"></span>
+  <div class="filter-row primary-row">
+    <input type="text" id="search" placeholder="Search (title, description, tags, types)" aria-label="Search resources" />
+    <label class="sort-label">Sort:
+      <select id="sortSelect">
+        <option value="title">Title (A-Z)</option>
+        <option value="-title">Title (Z-A)</option>
+        <option value="added">Date Added (Newest)</option>
+        <option value="-added">Date Added (Oldest)</option>
+        <option value="rating">Rating (High)</option>
+        <option value="-rating">Rating (Low)</option>
+      </select>
+    </label>
+    <span id="resultCount" class="result-count"></span>
+  </div>
+  <div class="filter-row secondary-row">
+    <div class="filter-group">
+      <span class="filter-label">Types:</span>
+      <div class="type-filters" id="typeFilters" aria-label="Filter by type"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Tags:</span>
+      <div class="tag-filters" id="tagFilters" aria-label="Filter by tag"></div>
+    </div>
+  </div>
 </div>
 
 <ul id="resourceList" class="resource-list" aria-live="polite"></ul>

@@ -40,7 +40,8 @@ title: string (required)
 url: string (required)
 description: short text
 tags: [list of lowercase tags]
-type: article|video|book|course|tool|repo|paper|other
+types: [list of resource type strings]
+type: legacy single type (auto-upgraded internally)
 level: beginner|intermediate|advanced|all
 added: YYYY-MM-DD (for sorting)
 rating: 1-5 (optional subjective quality)

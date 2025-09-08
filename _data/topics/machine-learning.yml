@@ -2,32 +2,32 @@ resources:
   - title: fast.ai Practical Deep Learning for Coders
     url: https://course.fast.ai/
     description: Hands-on deep learning course using PyTorch.
-    tags: [deep-learning, pytorch, course]
-    type: course
+    tags: [deep-learning, pytorch]
+    types: [course, book]
     level: intermediate
     added: 2024-05-10
     rating: 5
   - title: The Hundred-Page Machine Learning Book
     url: https://themlbook.com/
     description: Concise overview of core ML concepts.
-    tags: [overview, book]
-    type: book
+    tags: [overview]
+    types: [book]
     level: beginner
     added: 2023-12-02
     rating: 4
   - title: Papers with Code
     url: https://paperswithcode.com/
     description: Browse ML papers linked with code implementations.
-    tags: [papers, code, benchmarking]
-    type: tool
+    tags: [papers, benchmarking]
+    types: [tool, site]
     level: all
     added: 2025-01-15
     rating: 5
   - title: Hugging Face Transformers Documentation
     url: https://huggingface.co/docs/transformers/index
     description: Library docs for modern NLP models.
-    tags: [nlp, transformers, documentation]
-    type: documentation
+    tags: [nlp, transformers]
+    types: [documentation, library]
     level: intermediate
     added: 2024-11-18
     rating: 5

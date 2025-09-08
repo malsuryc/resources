@@ -22,7 +22,8 @@ index.md                   # Landing page with topic cards
 | url | Link (required) |
 | description | Short summary |
 | tags | List of lowercase tags (for filtering) |
-| type | article|video|book|course|tool|repo|paper|documentation|other |
+| types | Array of types (e.g. `["book", "course", "jupyter-notebook"]`) |
+| type (legacy) | Single type string (still supported, auto-upgraded to `types`) |
 | level | beginner|intermediate|advanced|all |
 | added | YYYY-MM-DD (sorting) |
 | rating | 1-5 subjective quality score |
@@ -31,7 +32,7 @@ index.md                   # Landing page with topic cards
 
 ## Adding a Resource
 
-Edit the relevant YAML file under `_data/topics/`. Append a new item under `resources:` following the schema. Keep date format consistent (YYYY-MM-DD). Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`).
+Edit the relevant YAML file under `_data/topics/`. Append a new item under `resources:` following the schema. Keep date format consistent (YYYY-MM-DD). Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`). If a resource belongs to multiple types, use the `types:` array; if you provide only `type:`, it will be treated as `[type]` automatically.
 
 ## Adding a Topic
 
@@ -67,10 +68,3 @@ Then open http://localhost:4000.
 - Per-resource detail pages + notes
 - Import from CSV / Google Sheet
 - Tag usage analytics
-
-## License
-
-Specify a license (e.g., MIT) if you want external contributions.
-
----
-Maintained by Cyrus Lam. Contributions welcome.
