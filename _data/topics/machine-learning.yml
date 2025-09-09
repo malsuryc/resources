@@ -63,3 +63,27 @@ resources:
     level: advanced
     added: 2025-09-09
     rating: 4
+  - title: Machine Learning Glossary
+    url: https://ml-cheatsheet.readthedocs.io/
+    description: Brief visual explanations of machine learning concepts with diagrams, code examples and links to resources for learning more.
+    tags: [mathematics, python, visual]
+    types: [documentation]
+    level: all
+    added: 2025-09-09
+    rating: 5
+  - title: Elements of Data Science
+    url: https://allendowney.github.io/ElementsOfDataScience
+    description: An introduction to data science for people with no programming experience
+    tags: [data-science, python]
+    types: [book, jupyter-notebook]
+    level: beginner
+    added: 2025-09-09
+    rating: 4
+  - title: CS231n Deep Learning for Computer Vision: Notes
+    url: https://cs231n.github.io/
+    description: Course notes and resources for the CS231n class on deep learning for computer vision.
+    tags: [deep-learning, computer-vision]
+    types: [course, notes]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
