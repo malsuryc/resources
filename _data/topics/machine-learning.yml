@@ -87,3 +87,11 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 4
+  - title: Mathematics for Inference and Machine Learning
+    url: https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachineLearningNotes.pdf
+    description: Explores the use of mathematical tools for the design of basic machine learning and inference methodologies.
+    tags: [mathematics]
+    types: [book, course]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
