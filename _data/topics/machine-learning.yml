@@ -31,3 +31,11 @@ resources:
     level: intermediate
     added: 2024-11-18
     rating: 5
+  - title: Machine Learning from scratch
+    url: https://github.com/DorsaRoh/Machine-Learning
+    description: Step-by-step implementations of ML, using only numpy.
+    tags: [from-scratch, implementation, numpy]
+    types: [jupyter-notebook, tutorial]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
