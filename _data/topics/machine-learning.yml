@@ -2,7 +2,7 @@ resources:
   - title: fast.ai Practical Deep Learning for Coders
     url: https://course.fast.ai/
     description: Hands-on deep learning course using PyTorch.
-    tags: [deep-learning, pytorch]
+    tags: [deep-learning, python]
     types: [course, book]
     level: intermediate
     added: 2024-05-10
@@ -55,3 +55,11 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 5
+  - title: How to Scale Your Model: A Systems View of LLMs on TPUs
+    url: https://jax-ml.github.io/scaling-book/
+    description: Concise guide to scaling LLMs, covering TPU/GPU operations, model parallelization, and resource estimation.
+    tags: [scaling, LLM, TPU]
+    types: [book]
+    level: advanced
+    added: 2025-09-09
+    rating: 4
