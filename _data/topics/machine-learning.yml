@@ -95,3 +95,11 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 4
+  - title: Build a Large Language Model (From Scratch)
+    url: https://github.com/rasbt/LLMs-from-scratch.git
+    description: Step-by-step guide to building a large language model from scratch using Python and PyTorch, and how they work.
+    tags: [LLM, from-scratch, python]
+    types: [book, jupyter-notebook, tutorial]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
