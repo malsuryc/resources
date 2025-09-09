@@ -1,0 +1,17 @@
+resources:
+  - title: Anna's Archive
+    url: https://annas-archive.org/
+    description: A large, open library for various textbooks.
+    tags: [textbooks]
+    types: [database, library]
+    level: all
+    added: 2025-09-09
+    rating: 5
+  - title: Litsolutions
+    url: https://litsolutions.org/
+    description: A free, large database of Step By Step Problem Solutions For University Textbooks
+    tags: [textbooks, solutions]
+    types: [database, library]
+    level: all
+    added: 2025-09-09
+    rating: 5
