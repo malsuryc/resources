@@ -39,7 +39,7 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 4
-  - title: The Most Important Machine Learning Equations: A Comprehensive Guide
+  - title: "The Most Important Machine Learning Equations: A Comprehensive Guide"
     url: https://chizkidd.github.io/2025/05/30/machine-learning-key-math-eqns/
     description: Theoretical insights and practical implementations of most critical ML equations, in Python
     tags: [mathematics, python]
@@ -55,7 +55,7 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 5
-  - title: How to Scale Your Model: A Systems View of LLMs on TPUs
+  - title: "How to Scale Your Model: A Systems View of LLMs on TPUs"
     url: https://jax-ml.github.io/scaling-book/
     description: Concise guide to scaling LLMs, covering TPU/GPU operations, model parallelization, and resource estimation.
     tags: [scaling, LLM, TPU]
@@ -79,7 +79,7 @@ resources:
     level: beginner
     added: 2025-09-09
     rating: 4
-  - title: CS231n Deep Learning for Computer Vision: Notes
+  - title: Notes for CS231n Deep Learning for Computer Vision
     url: https://cs231n.github.io/
     description: Course notes and resources for the CS231n class on deep learning for computer vision.
     tags: [deep-learning, computer-vision]
