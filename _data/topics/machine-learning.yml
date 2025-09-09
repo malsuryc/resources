@@ -34,8 +34,24 @@ resources:
   - title: Machine Learning from scratch
     url: https://github.com/DorsaRoh/Machine-Learning
     description: Step-by-step implementations of ML, using only numpy.
-    tags: [from-scratch, implementation, numpy]
+    tags: [from-scratch, implementation, python]
     types: [jupyter-notebook, tutorial]
     level: intermediate
     added: 2025-09-09
     rating: 4
+  - title: The Most Important Machine Learning Equations: A Comprehensive Guide
+    url: https://chizkidd.github.io/2025/05/30/machine-learning-key-math-eqns/
+    description: Theoretical insights and practical implementations of most critical ML equations, in Python
+    tags: [mathematics, python]
+    types: [article, tutorial]
+    level: beginner
+    added: 2025-09-09
+    rating: 4
+  - title: Dive into Deep Learning
+    url: https://d2l.ai/
+    description: Interactive deep learning book with code, math, and discussions.
+    tags: [deep-learning, interactive]
+    types: [book, course, jupyter-notebook]
+    level: intermediate
+    added: 2025-09-09
+    rating: 5
