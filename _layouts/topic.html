@@ -35,11 +35,11 @@ layout: default
 
 <ul id="resourceList" class="resource-list" aria-live="polite"></ul>
 
+{% assign topic_resources = site.data.resources.resources | where: 'main', page.topic_key %}
 <noscript>
   <p><strong>Note:</strong> Enable JavaScript to use interactive filtering. Basic list:</p>
   <ul>
-    {% assign data_set = site.data.topics[page.topic_key].resources %}
-    {% for r in data_set %}
+    {% for r in topic_resources %}
       <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.title }}</a> - {{ r.description }}</li>
     {% endfor %}
   </ul>
@@ -48,6 +48,6 @@ layout: default
 <script id="topic-data" type="application/json">
 {
   "topic_key": {{ page.topic_key | jsonify }},
-  "resources": {{ site.data.topics[page.topic_key].resources | jsonify }}
+  "resources": {{ topic_resources | jsonify }}
 }
 </script>

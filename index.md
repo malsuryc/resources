@@ -7,9 +7,10 @@ title: Home
 
 <p>Browse curated resources by topic. Click a topic to explore, then refine with search, tags, and sorting. To add or edit resources, submit a pull request.</p>
 
+{% assign all_resources = site.data.resources.resources %}
 <div class="topics-grid">
 {% for t in site.nav_topics %}
-  {% assign rcount = site.data.topics[t.key].resources | size %}
+  {% assign rcount = all_resources | where: 'main', t.key | size %}
   <a class="topic-card" href="{{ '/topics/' | append: t.key | append: '/' | relative_url }}">
     <h3>{{ t.title }}</h3>
     <p>{{ rcount }} resource{% if rcount != 1 %}s{% endif %}</p>
@@ -21,27 +22,16 @@ title: Home
 
 <p>Latest resources added across all topics (most recent first).</p>
 
-{% assign all = '' | split: '' %}
-{% for topic in site.data.topics %}
-  {% assign resources = topic[1].resources %}
-  {% if resources %}
-    {% assign all = all | concat: resources %}
-  {% endif %}
-{% endfor %}
-{% assign all_sorted = all | sort: 'added' | reverse %}
+{% assign all_sorted = all_resources | sort: 'added' | reverse %}
 
 {% if all_sorted.size > 0 %}
 <ul class="resource-list">
 {% for r in all_sorted limit:5 %}
-  {% assign r_url = r.url %}
   {% assign topic_name = '' %}
   {% for t in site.nav_topics %}
-    {% assign key = t.key %}
-    {% for candidate in site.data.topics[key].resources %}
-      {% if candidate.url == r_url %}
-        {% assign topic_name = t.title %}
-      {% endif %}
-    {% endfor %}
+    {% if t.key == r.main %}
+      {% assign topic_name = t.title %}
+    {% endif %}
   {% endfor %}
   <li class="resource-item">
     <h4><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.title }}</a></h4>
@@ -67,8 +57,8 @@ title: Home
 
 ## Adding a New Topic
 
-1. Create a data file in `_data/topics/<new-topic>.yml` following existing structure.
-2. Add it to `nav_topics` in `_config.yml`.
+1. Add it to `nav_topics` in `_config.yml`.
+2. Add entries with `main: <new-topic>` to `_data/resources.yml`.
 3. Create `topics/<new-topic>.md` with front matter: 
    ```yaml
    ---

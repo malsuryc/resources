@@ -1,0 +1,2 @@
+This file consolidates all previous per-topic YAML files under _data/topics/ into a single list at _data/resources.yml.
+Keep this note if you need a reminder during transition; it can be deleted later.

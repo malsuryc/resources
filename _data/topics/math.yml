@@ -1,0 +1,9 @@
+resources:
+  - title: JUST THE MATHS by A.J. Hobson
+    url: https://archive.uea.ac.uk/jtm/contents.htm
+    description: Extremely compact, self-contained presentations of important mathematical topics.
+    tags: [foundation]
+    types: [book]
+    level: all
+    added: 2025-09-10
+    rating: 3

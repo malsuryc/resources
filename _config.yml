@@ -32,6 +32,8 @@ nav_topics:
     title: General
   - key: machine-learning
     title: Machine Learning
+  - key: math
+    title: Math
   - key: cpp
     title: C++
   - key: japanese

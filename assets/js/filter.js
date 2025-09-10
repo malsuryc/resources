@@ -22,6 +22,12 @@
   const typeFiltersEl = document.getElementById('typeFilters');
   const resultCountEl = document.getElementById('resultCount');
   const data = window.TOPIC_RESOURCES.slice();
+  // Ensure we keep only resources matching current topic if backend sent superset (defensive)
+  if (window.TOPIC_KEY) {
+    for (let i = data.length - 1; i >= 0; i--) {
+      if (data[i].main && data[i].main !== window.TOPIC_KEY) data.splice(i,1);
+    }
+  }
 
   // Normalize types: allow legacy single 'type' or new 'types' array
   data.forEach(r => {

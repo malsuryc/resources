@@ -1,0 +1,246 @@
+resources:
+  # General
+  - main: general
+    title: Anna's Archive
+    url: https://annas-archive.org/
+    description: A large, open library for various textbooks.
+    tags: [textbooks]
+    types: [database, library]
+    level: all
+    added: 2025-09-09
+    rating: 5
+  - main: general
+    title: Litsolutions
+    url: https://litsolutions.org/
+    description: Step-by-step solutions for many university textbooks.
+    tags: [textbooks, solutions]
+    types: [database, library]
+    level: all
+    added: 2025-09-09
+    rating: 5
+
+  # Machine Learning
+  - main: machine-learning
+    title: fast.ai Practical Deep Learning for Coders
+    url: https://course.fast.ai/
+    description: Hands-on deep learning course using PyTorch.
+    tags: [deep-learning, pytorch]
+    types: [course, book]
+    level: intermediate
+    added: 2024-05-10
+    rating: 5
+  - main: machine-learning
+    title: The Hundred-Page Machine Learning Book
+    url: https://themlbook.com/
+    description: Concise overview of core ML concepts.
+    tags: [overview]
+    types: [book]
+    level: beginner
+    added: 2023-12-02
+    rating: 4
+  - main: machine-learning
+    title: Papers with Code
+    url: https://paperswithcode.com/
+    description: Browse ML papers linked with code implementations.
+    tags: [papers, benchmarking]
+    types: [tool, site]
+    level: all
+    added: 2025-01-15
+    rating: 5
+  - main: machine-learning
+    title: Hugging Face Transformers Documentation
+    url: https://huggingface.co/docs/transformers/index
+    description: Library docs for modern NLP models.
+    tags: [nlp, transformers]
+    types: [documentation, library]
+    level: intermediate
+    added: 2024-11-18
+    rating: 5
+  - main: machine-learning
+    title: Machine Learning from Scratch
+    url: https://github.com/DorsaRoh/Machine-Learning
+    description: Step-by-step machine learning implementations using only NumPy.
+    tags: [from-scratch, implementation, python]
+    types: [jupyter-notebook, tutorial]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: The Most Important Machine Learning Equations
+    url: https://chizkidd.github.io/2025/05/30/machine-learning-key-math-eqns/
+    description: Key ML equations with theoretical insight and Python examples.
+    tags: [mathematics, python]
+    types: [article, tutorial]
+    level: beginner
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: Dive into Deep Learning
+    url: https://d2l.ai/
+    description: Interactive deep learning book with code, math, and discussions.
+    tags: [deep-learning, interactive]
+    types: [book, course, jupyter-notebook]
+    level: intermediate
+    added: 2025-09-09
+    rating: 5
+  - main: machine-learning
+    title: How to Scale Your Model (Systems View of LLMs)
+    url: https://jax-ml.github.io/scaling-book/
+    description: Concise guide to scaling LLMs (TPU/GPU, parallelization, resource estimation).
+    tags: [scaling, LLM, TPU]
+    types: [book]
+    level: advanced
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: Machine Learning Glossary
+    url: https://ml-cheatsheet.readthedocs.io/
+    description: Visual explanations of machine learning concepts.
+    tags: [mathematics, python, visual]
+    types: [documentation]
+    level: all
+    added: 2025-09-09
+    rating: 5
+  - main: machine-learning
+    title: Elements of Data Science
+    url: https://allendowney.github.io/ElementsOfDataScience
+    description: Intro to data science for those with no programming experience.
+    tags: [data-science, python]
+    types: [book, jupyter-notebook]
+    level: beginner
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: CS231n Notes
+    url: https://cs231n.github.io/
+    description: Deep learning for computer vision course notes.
+    tags: [deep-learning, computer-vision]
+    types: [course, notes]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: Mathematics for Inference and Machine Learning
+    url: https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachineLearningNotes.pdf
+    description: Mathematical tools for inference and ML methodology design.
+    tags: [mathematics]
+    types: [book, course]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
+  - main: machine-learning
+    title: Build a Large Language Model (From Scratch)
+    url: https://github.com/rasbt/LLMs-from-scratch.git
+    description: Step-by-step guide to LLM internals and implementation.
+    tags: [LLM, from-scratch, python]
+    types: [book, jupyter-notebook, tutorial]
+    level: intermediate
+    added: 2025-09-09
+    rating: 4
+
+  # Math
+  - main: math
+    title: JUST THE MATHS
+    url: https://archive.uea.ac.uk/jtm/contents.htm
+    description: Compact, self-contained presentations of key mathematical topics.
+    tags: [foundation]
+    types: [book]
+    level: all
+    added: 2025-09-10
+    rating: 3
+
+  # C++
+  - main: cpp
+    title: C++ Reference (cppreference)
+    url: https://en.cppreference.com/
+    description: Comprehensive C++ language and standard library reference.
+    tags: [reference, standard-library]
+    types: [documentation]
+    level: all
+    added: 2024-04-12
+    rating: 5
+  - main: cpp
+    title: C++ Core Guidelines
+    url: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+    description: Best practices for modern C++.
+    tags: [guidelines, best-practices]
+    types: [documentation]
+    level: all
+    added: 2024-07-21
+    rating: 5
+  - main: cpp
+    title: Compiler Explorer
+    url: https://godbolt.org/
+    description: Explore compiled assembly for C++ code.
+    tags: [tool, optimization]
+    types: [tool]
+    level: intermediate
+    added: 2025-03-03
+    rating: 4
+
+  # Japanese
+  - main: japanese
+    title: Tae Kim's Guide to Learning Japanese
+    url: http://www.guidetojapanese.org/learn/
+    description: Grammar guide for beginners to intermediate learners.
+    tags: [grammar, guide]
+    types: [article, guide]
+    level: beginner
+    added: 2023-10-05
+    rating: 4
+  - main: japanese
+    title: NHK Easy News
+    url: https://www3.nhk.or.jp/news/easy/
+    description: Simplified Japanese news articles with furigana.
+    tags: [reading, news]
+    types: [article]
+    level: beginner
+    added: 2024-06-14
+    rating: 5
+  - main: japanese
+    title: Anki Spaced Repetition System
+    url: https://apps.ankiweb.net/
+    description: Flashcard system ideal for vocabulary retention.
+    tags: [anki, flashcards, vocabulary]
+    types: [tool, app]
+    level: all
+    added: 2024-09-09
+    rating: 5
+
+  # Mindset
+  - main: mindset
+    title: Atomic Habits by James Clear
+    url: https://jamesclear.com/atomic-habits
+    description: Framework for building and sustaining good habits.
+    tags: [habits, behavior]
+    types: [book]
+    level: all
+    added: 2024-02-11
+    rating: 5
+  - main: mindset
+    title: Carol Dweck on Growth Mindset (TED Talk)
+    url: https://www.ted.com/talks/carol_dweck_the_power_of_believing_you_can_improve
+    description: Overview of growth vs fixed mindset.
+    tags: [growth-mindset]
+    types: [video, talk]
+    level: all
+    added: 2023-11-30
+    rating: 4
+  - main: mindset
+    title: The War of Art by Steven Pressfield
+    url: https://www.stevenpressfield.com/the-war-of-art/
+    description: Overcoming creative resistance.
+    tags: [creativity, resistance]
+    types: [book]
+    level: all
+    added: 2024-08-01
+    rating: 4
+  - main: mindset
+    title: How to Master Networking in 14 Minutes
+    url: https://www.youtube.com/watch?v=5BesUAyNvFY
+    description: Blueprint to build a professional network.
+    tags: [networking, career]
+    types: [video, tutorial]
+    level: all
+    added: 2025-09-09
+    rating: 5
