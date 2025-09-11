@@ -148,6 +148,15 @@ resources:
     level: all
     added: 2025-09-10
     rating: 3
+  - main: math
+    title: Interactive Linear Algebra
+    url: https://personal.math.ubc.ca/~tbjw/ila/
+    description: Interactive resource for learning linear algebra concepts.
+    tags: [linear-algebra, interactive]
+    types: [book, web]
+    level: beginner
+    added: 2025-09-12
+    rating: 5
 
   # C++
   - main: cpp
