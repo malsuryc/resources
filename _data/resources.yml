@@ -137,7 +137,15 @@ resources:
     level: intermediate
     added: 2025-09-09
     rating: 4
-
+  - main: machine-learning
+    title: Mathematics for Machine Learning
+    url: https://mml-book.github.io/
+    description: Provide necessary mathematical skills for advanced machine learning techniques
+    tags: [mathematics]
+    types: [book, jupyter-notebook]
+    level: beginner
+    added: 2025-09-17
+    rating: 4
   # Math
   - main: math
     title: JUST THE MATHS
