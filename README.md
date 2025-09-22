@@ -1,6 +1,6 @@
 # Learning Resources Site
 
-Static, data-driven resource library built with GitHub Pages (Jekyll, no custom plugins) enabling topic pages with client-side filtering, tagging, and sorting.
+A resources site for learning
 
 ## Structure
 
