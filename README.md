@@ -11,6 +11,7 @@ _data/resources.yml        # Combined resources data (each item has 'main' topic
 topics/*.md                # Topic pages (one per topic)
 assets/css/style.css       # Styles
 assets/js/filter.js        # Filtering/sorting logic
+construct.py               # YAML constructor
 index.md                   # Landing page with topic cards
 ```
 
@@ -33,8 +34,12 @@ index.md                   # Landing page with topic cards
 
 ## Adding a Resource
 
-Edit `_data/resources.yml` and append a new item under `resources:` including a `main:` field that matches one of the `nav_topics` keys. Keep date format consistent (YYYY-MM-DD). Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`). If a resource belongs to multiple types, use the `types:` array; if you provide only `type:`, it will be treated as `[type]` automatically.
-
+1. Use `construct.py` to construct a new resource.
+2. Edit `_data/resources.yml` and append the new item under `resources:`.
+   - Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`).
+   - If a resource belongs to multiple types, use the `types:` array.
+   - If you provide only `type:`, it will be treated as `[type]` automatically.
+3. Commit & push to `gh-pages`.
 ## Adding a Topic
 
 1. Add entry to `nav_topics` in `_config.yml`.
@@ -47,7 +52,7 @@ Edit `_data/resources.yml` and append a new item under `resources:` including a 
    topic_key: <key>
    ---
    ```
-4. Commit & push to `gh-pages` (or default branch per Pages settings).
+4. Commit & push to `gh-pages`.
 
 ## Local Preview
 
@@ -60,8 +65,6 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open http://localhost:4000.
-
 ## Roadmap / Ideas
 
 - Global search across all topics (build merged JSON)
@@ -69,3 +72,5 @@ Then open http://localhost:4000.
 - Per-resource detail pages + notes
 - Import from CSV / Google Sheet
 - Tag usage analytics
+- Sorter after constructor to ease manual insert
+- A course section storing course material (pdf...)
