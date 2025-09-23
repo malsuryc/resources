@@ -165,6 +165,15 @@ resources:
     level: beginner
     added: 2025-09-12
     rating: 5
+  - main: math
+    title: Feynman's Trick
+    url: https://zackyzz.github.io/feynman 
+    description: A well written article about tricks of differentiation under integral sign & Leibniz Integral Rule
+    tags: ['calculus']
+    types: ['article']
+    level: 1
+    added: 2025-09-24
+    rating: 5
 
   # C++
   - main: cpp
