@@ -19,11 +19,11 @@ index.md                   # Landing page with topic cards
 
 | Field | Description |
 |-------|-------------|
+| main | Classfication / Topic key of the resource (required) |
 | title | Name of the resource (required) |
 | url | Link (required) |
 | description | Short summary |
 | tags | List of lowercase tags (for filtering) |
-| main | Topic key this resource belongs to (e.g. `machine-learning`) |
 | types | Array of types (e.g. `["book", "course", "jupyter-notebook"]`) |
 | type (legacy) | Single type string (still supported, auto-upgraded to `types`) |
 | level | beginner|intermediate|advanced|all |
@@ -40,6 +40,7 @@ index.md                   # Landing page with topic cards
    - If a resource belongs to multiple types, use the `types:` array.
    - If you provide only `type:`, it will be treated as `[type]` automatically.
 3. Commit & push to `gh-pages`.
+
 ## Adding a Topic
 
 1. Add entry to `nav_topics` in `_config.yml`.

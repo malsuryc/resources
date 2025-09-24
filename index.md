@@ -109,35 +109,3 @@ It will not be visible in the rendered Markdown.
   }
 }
 </script>
-
-## Adding a New Topic
-
-1. Add it to `nav_topics` in `_config.yml`.
-2. Add entries with `main: <new-topic>` to `_data/resources.yml`.
-3. Create `topics/<new-topic>.md` with front matter: 
-   ```yaml
-   ---
-   layout: topic
-   title: Your Title
-   topic_key: new-topic
-   ---
-   ```
-4. Commit & push. GitHub Pages will rebuild.
-
-## Data Schema
-
-Each resource entry supports:
-
-```
-title: string (required)
-url: string (required)
-description: short text
-tags: [list of lowercase tags]
-types: [list of resource type strings]
-type: legacy single type (auto-upgraded internally)
-level: beginner|intermediate|advanced|all
-added: YYYY-MM-DD (for sorting)
-rating: 1-5 (optional subjective quality)
-author: optional string
-language: e.g. en, ja
-```
