@@ -3,9 +3,6 @@ layout: default
 title: Home
 ---
 
-## Topics
-
-<p>Browse curated resources by topic. Click a topic to explore, then refine with search, tags, and sorting. To add or edit resources, submit a pull request.</p>
 
 {% assign all_resources = site.data.resources.resources %}
 <div class="topics-grid">
@@ -17,6 +14,10 @@ title: Home
   </a>
 {% endfor %}
 </div>
+
+<!-- 
+This is a multi-line comment.
+It will not be visible in the rendered Markdown.
 
 ## Recently Added Resources
 
@@ -54,6 +55,60 @@ title: Home
 {% else %}
 <p>No resources yet.</p>
 {% endif %}
+-->
+<span></span>
+<div class="filters global-filters">
+  <div class="filter-row primary-row">
+    <input type="text" id="search" placeholder="Search (title, description, tags, types)" aria-label="Search all resources" />
+    <label class="sort-label">Sort:
+      <select id="sortSelect">
+        <option value="added">Date Added (Newest)</option>
+        <option value="-added">Date Added (Oldest)</option>
+        <option value="title">Title (A-Z)</option>
+        <option value="-title">Title (Z-A)</option>
+        <option value="rating">Rating (High)</option>
+        <option value="-rating">Rating (Low)</option>
+        <option value="main">Topic (A-Z)</option>
+        <option value="-main">Topic (Z-A)</option>
+      </select>
+    </label>
+    <span id="resultCount" class="result-count" aria-live="polite"></span>
+  </div>
+  <div class="filter-row secondary-row">
+    <div class="filter-group">
+      <span class="filter-label">Topics:</span>
+      <div class="topic-filters" id="topicFilters" aria-label="Filter by topic"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Types:</span>
+      <div class="type-filters" id="typeFilters" aria-label="Filter by type"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Tags:</span>
+      <div class="tag-filters" id="tagFilters" aria-label="Filter by tag"></div>
+    </div>
+  </div>
+</div>
+
+<ul id="resourceList" class="resource-list" aria-live="polite"></ul>
+
+<noscript>
+  <p><strong>Note:</strong> Enable JavaScript to use global interactive filtering. Basic list:</p>
+  <ul>
+  {% for r in all_resources %}
+    <li><a href="{{ r.url }}" target="_blank" rel="noopener">{{ r.title }}</a>{% if r.description %} – {{ r.description }}{% endif %}</li>
+  {% endfor %}
+  </ul>
+</noscript>
+
+<script id="topic-data" type="application/json">
+{
+  "resources": {{ all_resources | jsonify }},
+  "topic_titles": {
+    {% for t in site.nav_topics %}"{{ t.key }}": {{ t.title | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}
+  }
+}
+</script>
 
 ## Adding a New Topic
 
@@ -86,7 +141,3 @@ rating: 1-5 (optional subjective quality)
 author: optional string
 language: e.g. en, ja
 ```
-
-## Global Search (Planned)
-
-Future enhancement: cross-topic search page aggregating all data.

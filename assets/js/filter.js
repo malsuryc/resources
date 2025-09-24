@@ -20,8 +20,10 @@
   const sortSelect = document.getElementById('sortSelect');
   const tagFiltersEl = document.getElementById('tagFilters');
   const typeFiltersEl = document.getElementById('typeFilters');
+  const topicFiltersEl = document.getElementById('topicFilters');
   const resultCountEl = document.getElementById('resultCount');
   const data = window.TOPIC_RESOURCES.slice();
+  const topicTitles = window.TOPIC_TITLES || (window.TOPIC_META && window.TOPIC_META.topic_titles) || {};
   // Ensure we keep only resources matching current topic if backend sent superset (defensive)
   if (window.TOPIC_KEY) {
     for (let i = data.length - 1; i >= 0; i--) {
@@ -54,6 +56,9 @@
 
   const activeTags = new Set();
   const activeTypes = new Set();
+  const activeTopics = new Set(); // Only used in global mode (index)
+
+  const isGlobal = !window.TOPIC_KEY && !!topicFiltersEl; // index page global search
 
   function buildChip(label, collection, activeSet) {
     const chip = document.createElement('span');
@@ -71,10 +76,26 @@
   }
 
   function renderFilterChips() {
-    tagFiltersEl.innerHTML = '';
-    typeFiltersEl.innerHTML = '';
-    tags.forEach(tag => buildChip(tag, tagFiltersEl, activeTags));
-    types.forEach(tp => buildChip(tp, typeFiltersEl, activeTypes));
+    if (tagFiltersEl) {
+      tagFiltersEl.innerHTML = '';
+      tags.forEach(tag => buildChip(tag, tagFiltersEl, activeTags));
+    }
+    if (typeFiltersEl) {
+      typeFiltersEl.innerHTML = '';
+      types.forEach(tp => buildChip(tp, typeFiltersEl, activeTypes));
+    }
+    if (topicFiltersEl) {
+      // Build topic list based on resources present (may be subset)
+      topicFiltersEl.innerHTML = '';
+      const topicSet = new Set();
+      data.forEach(r => { if (r.main) topicSet.add(r.main); });
+      Array.from(topicSet).sort().forEach(tk => {
+        buildChip(topicTitles[tk] || tk, topicFiltersEl, activeTopics);
+        // store mapping label->key for lookup (use dataset)
+        const chip = topicFiltersEl.lastElementChild;
+        chip.dataset.topicKey = tk;
+      });
+    }
   }
 
   function normalize(str) { return (str || '').toLowerCase(); }
@@ -83,6 +104,19 @@
     const q = normalize(searchInput.value.trim());
     const tagFilter = activeTags.size ? Array.from(activeTags) : null;
     const typeFilter = activeTypes.size ? Array.from(activeTypes) : null;
+    const topicFilter = activeTopics.size ? new Set(Array.from(activeTopics).map(lbl => {
+      // reverse lookup label to key from chips dataset
+      // Build a mapping once
+      if (!apply._topicLabelMap) {
+        apply._topicLabelMap = {};
+        if (topicFiltersEl) {
+          Array.from(topicFiltersEl.children).forEach(ch => {
+            if (ch.dataset.topicKey) apply._topicLabelMap[ch.textContent] = ch.dataset.topicKey;
+          });
+        }
+      }
+      return apply._topicLabelMap[lbl] || lbl;
+    })) : null;
     let filtered = data.filter(r => {
       // Tag AND logic
       if (tagFilter) {
@@ -91,6 +125,10 @@
       // Type AND logic
       if (typeFilter) {
         if (!r.types || typeFilter.some(t => !r.types.includes(t))) return false;
+      }
+      // Topic OR logic (global only)
+      if (topicFilter) {
+        if (!r.main || !topicFilter.has(r.main)) return false;
       }
       if (!q) return true;
       const blob = [r.title, r.description, (r.tags || []).join(' '), (r.types || []).join(' ')].map(normalize).join(' ');
@@ -106,6 +144,7 @@
       if (key === 'title') return a.title.localeCompare(b.title) * dir;
       if (key === 'added') return (new Date(b.added) - new Date(a.added)) * dir; // 'added' default newest => note direction
       if (key === 'rating') return ((b.rating||0) - (a.rating||0)) * dir; // High first
+      if (key === 'main') return ((a.main||'').localeCompare(b.main||'')) * dir;
       return 0;
     });
 
@@ -120,6 +159,7 @@
       const tagsHtml = (r.tags||[]).map(t => `<span class="tag-badge" title="Tag: ${t}">${t}</span>`).join('');
       const metaBits = [];
   if (r.types && r.types.length) metaBits.push(r.types.join('/'));
+      if (isGlobal && r.main) metaBits.push(topicTitles[r.main] || r.main);
       if (r.level) metaBits.push(r.level);
       if (r.language) metaBits.push(r.language);
       if (r.rating) metaBits.push(`⭐${r.rating}`);
@@ -136,8 +176,8 @@
   }
 
   // Event listeners
-  ['input','change'].forEach(ev => searchInput.addEventListener(ev, apply));
-  sortSelect.addEventListener('change', apply);
+  if (searchInput) ['input','change'].forEach(ev => searchInput.addEventListener(ev, apply));
+  if (sortSelect) sortSelect.addEventListener('change', apply);
 
   renderFilterChips();
   apply();
