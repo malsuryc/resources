@@ -1,4 +1,6 @@
 from datetime import datetime
+import readline
+#from fomatter import insert
 
 class Resource:
     def __init__(self, main, title, url, description, tags, types, level, added, rating):
@@ -19,12 +21,13 @@ class Resource:
     def level(self, value):
         try:
             value = int(value)
-            if value not in [1, 2, 3]:
-                raise ValueError("Level must be 1, 2, 3")
-            self._level = value
+            if value not in list(range(4)):
+                raise ValueError("Level must be 0 to 3")
+            dict_level = {0: "all", 1: "beginner", 2: "intermediate", 3: "advanced"}
+            self._level = dict_level[value]
         except (ValueError, TypeError):
-            raise ValueError("Level must be 1, 2, 3")
-    
+            raise ValueError("Level must be 0 to 3")
+
     @property
     def rating(self):
         return self._rating
@@ -46,7 +49,7 @@ def get_content():
         description=input("Description: "),
         tags=[tag.strip() for tag in input("Tags (comma-separated): ").split(",")],
         types=[type.strip() for type in input("Types (comma-separated): ").split(",")],
-        level=input("Level(1: Beginner, 2: Intermediate, 3: Advanced): "),
+        level=input("Level(0: All, 1: Beginner, 2: Intermediate, 3: Advanced): "),
         added=datetime.now().strftime("%Y-%m-%d"),
         rating=input("Rating (1-5): ")
     )
@@ -70,6 +73,7 @@ def to_yaml_string(resource):
 def main():
     resource = get_content()
     yaml_str = to_yaml_string(resource)
+    #insert("_data/resources.yml", yaml_str)
     print(yaml_str)
 
 if __name__ == "__main__":

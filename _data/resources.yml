@@ -1,5 +1,5 @@
 resources:
-  # General
+####General####
   - main: general
     title: Anna's Archive
     url: https://annas-archive.org/
@@ -18,8 +18,8 @@ resources:
     level: all
     added: 2025-09-09
     rating: 5
-
-  # Machine Learning
+####General####
+####Machine Learning####
   - main: machine-learning
     title: fast.ai Practical Deep Learning for Coders
     url: https://course.fast.ai/
@@ -146,7 +146,8 @@ resources:
     level: beginner
     added: 2025-09-17
     rating: 4
-  # Math
+####Machine Learning####
+####Math####
   - main: math
     title: JUST THE MATHS
     url: https://archive.uea.ac.uk/jtm/contents.htm
@@ -171,11 +172,11 @@ resources:
     description: A well written article about tricks of differentiation under integral sign & Leibniz Integral Rule
     tags: ['calculus']
     types: ['article']
-    level: 1
+    level: beginner
     added: 2025-09-24
     rating: 5
-
-  # C++
+####Math####
+####C++####
   - main: cpp
     title: C++ Reference (cppreference)
     url: https://en.cppreference.com/
@@ -203,8 +204,8 @@ resources:
     level: intermediate
     added: 2025-03-03
     rating: 4
-
-  # Japanese
+####C++####
+####Japanese####
   - main: japanese
     title: Tae Kim's Guide to Learning Japanese
     url: http://www.guidetojapanese.org/learn/
@@ -232,8 +233,8 @@ resources:
     level: all
     added: 2024-09-09
     rating: 5
-
-  # Mindset
+####Japanese####
+####Mindset####
   - main: mindset
     title: Atomic Habits by James Clear
     url: https://jamesclear.com/atomic-habits
@@ -270,3 +271,16 @@ resources:
     level: all
     added: 2025-09-09
     rating: 5
+####Mindset####
+###AI Tools###
+  # free, free-tier/freemium, paid, subscription, open-source
+  - main: ai
+    title: Elicit: AI for scientific research
+    url: https://elicit.com/ 
+    description: An AI assistant that can search academic papers, extract insights, and generate reports
+    tags: ['free-tier', 'subscription', 'research', 'papers']
+    types: ['ai-assistant',]
+    level: all
+    added: 2025-09-26
+    rating: 4
+####AI Tools####
