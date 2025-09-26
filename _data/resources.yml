@@ -275,7 +275,7 @@ resources:
 ####Research Tools START####
   # free, free-tier/freemium, paid, subscription, open-source
   - main: research
-    title: Elicit: AI for scientific research
+    title: "Elicit: AI for scientific research"
     url: https://elicit.com/ 
     description: An AI assistant that can search academic papers, extract insights, and generate reports
     tags: ['free-tier', 'subscription', 'research', 'papers']
@@ -284,7 +284,7 @@ resources:
     added: 2025-09-26
     rating: 4
   - main: research
-    title: Zotero: Personal Research Assistant
+    title: "Zotero: Personal Research Assistant"
     url: https://www.zotero.org/ 
     description: A free, easy-to-use tool to help collect, organize, annotate, cite, and share research.
     tags: ['free', 'open-source', 'research']

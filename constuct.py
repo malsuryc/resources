@@ -57,9 +57,9 @@ def get_content():
 
 def to_yaml_string(resource):
     yaml_str = f"""  - main: {resource.main}
-    title: {resource.title}
+    title: "{resource.title}"
     url: {resource.url} 
-    description: {resource.description}
+    description: "{resource.description}"
     tags: {resource.tags}
     types: {resource.types}
     level: {resource.level}
