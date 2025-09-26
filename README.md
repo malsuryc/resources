@@ -17,20 +17,20 @@ index.md                   # Landing page with topic cards
 
 ## Resource Entry Schema
 
-| Field | Description |
-|-------|-------------|
-| main | Classfication / Topic key of the resource (required) |
-| title | Name of the resource (required) |
-| url | Link (required) |
-| description | Short summary |
-| tags | List of lowercase tags (for filtering) |
-| types | Array of types (e.g. `["book", "course", "jupyter-notebook"]`) |
+| Field         | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| main          | Classfication / Topic key of the resource (required)             |
+| title         | Name of the resource (required)                                  |
+| url           | Link (required)                                                  |
+| description   | Short summary                                                    |
+| tags          | List of lowercase tags (for filtering)                           |
+| types         | Array of types (e.g.`["book", "course", "jupyter-notebook"]`)  |
 | type (legacy) | Single type string (still supported, auto-upgraded to `types`) |
-| level | beginner|intermediate|advanced|all |
-| added | YYYY-MM-DD (sorting) |
-| rating | 1-5 subjective quality score |
-| author | Optional author/source |
-| language | e.g. en, ja |
+| level         | beginner                                                         |
+| added         | YYYY-MM-DD (sorting)                                             |
+| rating        | 1-5 subjective quality score                                     |
+| author        | Optional author/source                                           |
+| language      | e.g. en, ja                                                      |
 
 ## Adding a Resource
 
@@ -68,10 +68,8 @@ bundle exec jekyll serve
 
 ## Roadmap / Ideas
 
-- Global search across all topics (build merged JSON)
-- Offline cache via Service Worker
-- Per-resource detail pages + notes
-- Import from CSV / Google Sheet
-- Tag usage analytics
-- Sorter after constructor to ease manual insert
-- A course section storing course material (pdf...)
+- [X] Global search across all topics (build merged JSON)
+- [ ] Import from CSV / Google Sheet
+- [X] Sorter after constructor to ease manual insert
+- [ ] A course section storing course material (pdf...)
+- [ ] OpenAI bridge to utilize LLM to construct better description, tags, and types
