@@ -272,8 +272,17 @@ resources:
     added: 2025-09-09
     rating: 5
 ####Mindset END####
+# free, free-tier/freemium, paid, subscription, open-source
 ####Research Tools START####
-  # free, free-tier/freemium, paid, subscription, open-source
+  - main: research
+    title: "Storm: An LLM-powered knowledge curation system"
+    url: http://storm.genie.stanford.edu/ 
+    description: "A LLM system that writes Wikipedia-like articles from scratch based on Internet search."
+    tags: ['free', 'open-source', 'research', 'report']
+    types: ['LLM', 'API']
+    level: all
+    added: 2025-09-26
+    rating: 5
   - main: research
     title: "Elicit: AI for scientific research"
     url: https://elicit.com/ 
