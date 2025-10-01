@@ -40,7 +40,6 @@ def insert(yaml_str):
     for i in range(len(resource)):
         line = resource[i]
         if line[0:4] == "####" and line[-10:-5] == "START" and query in line:
-            print("Found")
             resource.insert(i + 1, yaml_str)
             break
     write_lines("_data/resources.yml", resource)

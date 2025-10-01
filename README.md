@@ -32,14 +32,18 @@ index.md                   # Landing page with topic cards
 | author        | Optional author/source                                           |
 | language      | e.g. en, ja                                                      |
 
-## Adding a Resource
+## Using `formatter.py` to add resources
 
-1. Use `construct.py` to construct a new resource.
-2. Edit `_data/resources.yml` and append the new item under `resources:`.
-   - Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`).
-   - If a resource belongs to multiple types, use the `types:` array.
-   - If you provide only `type:`, it will be treated as `[type]` automatically.
-3. Commit & push to `gh-pages`.
+Install Python, then:
+
+```python
+python formatter.py
+```
+- Tags should be short and consistent (e.g. `deep-learning` not `Deep Learning`).
+- If a resource belongs to multiple types, use the `types:` array.
+- If you provide only `type:`, it will be treated as `[type]` automatically.
+
+Commit & push to `gh-pages`.
 
 ## Adding a Topic
 

@@ -1,6 +1,15 @@
 resources:
 ####General START####
   - main: general
+    title: "QuickRef.ME: Quick Reference"
+    url: https://quickref.me 
+    description: "A huge curated library of cheatsheets and quick references"
+    tags: ['cheatsheet', 'quick-ref']
+    types: ['database', 'library']
+    level: all
+    added: 2025-10-01
+    rating: 5
+  - main: general
     title: Anna's Archive
     url: https://annas-archive.org/
     description: A large, open library for various textbooks.
