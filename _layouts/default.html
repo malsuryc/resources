@@ -18,6 +18,9 @@
       {% for t in site.nav_topics %}
         <a href="{{ '/topics/' | append: t.key | append: '/' | relative_url }}">{{ t.title }}</a>
       {% endfor %}
+      <a href="https://github.com/{{ site.github.repository_nwo }}">
+        <img src="{{ '/assets/icons/github-mark.svg' | relative_url }}" alt="GitHub" style="vertical-align: middle; width: 1.6em; height: 1.6em; transform: translateY(-0.1em) translateX(1em);" />
+      </a>
     </nav>
   </header>
   <main class="content">
